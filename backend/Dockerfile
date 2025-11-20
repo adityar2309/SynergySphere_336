@@ -47,4 +47,5 @@ ENV DOCKER_TAG=$DOCKER_TAG
 EXPOSE 5000
 
 # Run the app (activate venv first)
-CMD ["/bin/bash", "-c", ". .venv/bin/activate && gunicorn -b 0.0.0.0:5000 app:app"]
+# Run the app (activate venv first)
+CMD ["/bin/bash", "-c", ". .venv/bin/activate && gunicorn -b 0.0.0.0:${PORT:-5000} app:app"]
