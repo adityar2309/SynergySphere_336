@@ -1,0 +1,52 @@
+headersOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/pc/SynergySphere_336/frontend/dist"
+publishOrigin = "config"
+commandOrigin = "config"
+base = "/Users/pc/SynergySphere_336/frontend"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/*.js"
+
+[headers.values]
+Content-Type = "text/javascript"
+
+[[headers]]
+for = "/*.mjs"
+
+[headers.values]
+Content-Type = "text/javascript"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

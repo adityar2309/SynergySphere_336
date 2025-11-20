@@ -1,5 +1,8 @@
 // Use localhost for local development
-export const API_BASE_URL = "http://localhost:5000";
+// Use localhost for local development, production URL for deployment
+export const API_BASE_URL = import.meta.env.PROD
+  ? "https://synergysphere-backend-500345716418.us-central1.run.app"
+  : "http://localhost:5000";
 
 export const loadingState = {
   states: {},
@@ -29,7 +32,7 @@ export const loadingState = {
       loadingState.listeners[requestKey] = [];
     }
     loadingState.listeners[requestKey].push(callback);
-    
+
     return () => {
       loadingState.listeners[requestKey] = loadingState.listeners[requestKey].filter(cb => cb !== callback);
     };
